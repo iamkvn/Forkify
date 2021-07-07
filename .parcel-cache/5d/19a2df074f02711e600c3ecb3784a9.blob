@@ -398,6 +398,7 @@ const showRecipe = async function() {
         const data = await res.json();
         //HANDLING ERRORS
         if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+        log(res, data);
         //destructuring object
         let { recipe  } = data.data;
         //reassigning key names to remove underscores
@@ -411,6 +412,7 @@ const showRecipe = async function() {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
+        log(recipe);
     } catch (err) {
         alert(err);
     }
@@ -419,4 +421,4 @@ showRecipe();
 
 },{}]},["1WnDs","3miIZ"], "3miIZ", "parcelRequirefade")
 
-//# sourceMappingURL=index.250b04c7.js.map
+//# sourceMappingURL=index.HASH_REF_6315ebf922a29661e8263da0250b04c7.js.map
